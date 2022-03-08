@@ -1,6 +1,5 @@
+import 'package:boksi/screens/login/login.dart';
 import 'package:flutter/material.dart';
-
-import '../home.dart';
 
 class OurSignup extends StatelessWidget {
   const OurSignup({Key? key}) : super(key: key);
@@ -85,14 +84,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 ),
               ),
             ),
+            SizedBox(height: 20),
             Container(
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
-                  child: const Text('Login'),
+                  child: const Text('Sign up'),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => OurLogin(),
                     ));
                   },
                 )),
@@ -106,7 +106,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => OurSignup(),
+                      builder: (context) => OurLogin(),
                     ));
                   },
                 )
