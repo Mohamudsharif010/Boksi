@@ -1,6 +1,11 @@
+import 'package:boksi/pages/MyOrdersPage.dart';
+import 'package:boksi/pages/MyReviews.dart';
+import 'package:boksi/pages/MySales.dart';
+import 'package:boksi/screens/featured.dart';
 import 'package:boksi/screens/login/login.dart';
 import 'package:boksi/screens/sell.dart';
 import 'package:boksi/screens/sign%20up/signup.dart';
+import 'package:boksi/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,7 +33,12 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int selectedPage = 0;
 
-  final _pageOptions = [SalesPage(), OurLogin()];
+  final _pageOptions = [
+    FeaturedPage(),
+    MyOrdersPage(),
+    SalesPage(),
+    MyReviews()
+  ];
 
   // void _onItemTapped(int index) {
   //   setState(() {
@@ -39,6 +49,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           title: const Text('Home'),
         ),
@@ -51,7 +62,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               backgroundColor: Colors.red,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.store),
+              icon: Icon(Icons.handshake),
               label: 'Borrow',
               backgroundColor: Colors.green,
             ),
